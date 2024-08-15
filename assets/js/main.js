@@ -228,12 +228,12 @@ document.addEventListener('DOMContentLoaded', () => {
       0: {
           title: "Fine-tuning LLM to build a Machine Reading Comprehension (MRC)",
           description: `<ul>
-          <li>Fine-tuned BERT model using datasets such as COVIDQA and cpgQA to produce an MRC capable of reading
+          <li><b>Fine-tuned BERT model</b> using datasets such as COVIDQA and cpgQA to produce an MRC capable of reading
           biomedical articles and answering user queries.</li>
-          <li>Utilized PEFT techniques, such as LoRA and QLoRA, to optimize efficiency and reduce storage costs by fine-tuning
+          <li>Utilized <b>PEFT</b> techniques, such as LoRA and QLoRA, to optimize efficiency and reduce storage costs by fine-tuning
           only a subset of the model parameters.</li>
           <li>Compared the performance of fine-tuning the base BERT models and those pre-trained with the SQuAD dataset. The
-          finished model has an F1 score of 59.5 and an exact match of 27.6.</li>
+          finished model has an <b>F1 score of 59.5</b> and an <b>exact match of 27.6</b>.</li>
           </ul>`,
           // liveDemo: "https://example.com/demo1",
           sourceCode: "https://github.com/MasterGomi/T2-MRC/tree/master/DanielDang",
@@ -281,11 +281,13 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       3: {
           title: "Plant Disease Prediction Platform",
-          description: `<p>Created an image classification model by training and fine-tuning VGG16 model and integrated it into the platform’s
-          backend. Enabled the client to upload images and obtain prediction results with 98.6% accuracy and detailed
-          graphs.</p>
-          <p>Engaged directly with the client, gathering requirements, and collaborating with team members. Provided
-          leadership to drive project success and was rewarded among the top 10 best projects</p>`,
+          description: `<ul>
+          <li>Created an image classification model by training and fine-tuning VGG16 model and integrated it into the platform’s
+          backend. </li>
+          <li>Enabled the client to upload images and obtain prediction results with <b>98.6% accuracy</b> and detailed
+          graphs.</li>
+          <li>Engaged directly with the client, gathering requirements, and collaborating with team members. Provided
+          leadership to drive project success and was rewarded among the <b>top 10 best projects</b></li></ul>`,
           // liveDemo: "https://example.com/demo3",
           sourceCode: "https://github.com/ANSHK310702/Research-Project"
       },
@@ -293,6 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
           title: "World Energy Consumption Visualisation",
           description: `
           <p>The purpose of this visualization is to compare the consumption and production of various types of energy across the globe from 1980 to 2012.</p>
+          <p>This visualization is created using <strong>D3.js</strong>.</p>
 
           <p>The website will let users:</p>
           <ul>
