@@ -400,6 +400,7 @@ h3{
     width: 70%;
     max-width: 1800px; /* Optional: to constrain the max width */
     flex-wrap: wrap;    
+    margin: 0 auto;
 }
 
 .education-info .swin {
@@ -917,7 +918,7 @@ footer{
         width: 80%;
     }
     .education-info .swin {
-        width: 80%;
+        width: 100%;
     }
     footer {
         padding-block: 20px 30px; /* Further reduce padding */
@@ -980,7 +981,7 @@ footer{
         left: 10px;
     }
     .education-info .swin {
-        width: 80%;
+        width: 100%;
     }
     footer {
         padding-block: 15px 20px; /* Minimized padding */
