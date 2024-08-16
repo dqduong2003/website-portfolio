@@ -13,7 +13,16 @@
     <!-- --------- FAVICON ---------- -->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "lf0uZ3KJgw5eD5DNe",
+        });
+    })();
+    </script>
     <title>Daniel Dang | Portfolio</title>
 </head>
 <body>
@@ -419,7 +428,7 @@
             </div>
           </div>
           <div class="col">
-            <form id="contact-form" action="send-email.php" method="POST" enctype="multipart/form-data">
+            <form id="contact-form">
               <div class="form-control">
                 <div class="form-inputs">
                   <input type="text" name="name" class="input-field" placeholder="Name" required>
@@ -429,10 +438,10 @@
                   <textarea name="message" placeholder="Message" required></textarea>
                 </div>
                 <div class="form-button">
-                  <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
+                  <button type="submit" class="btn" onclick="sendMail()">Send <i class="uil uil-message"></i></button>
                 </div>
               </div>
-            </form>
+            </form> 
           </div>
         </div>
       </section>
