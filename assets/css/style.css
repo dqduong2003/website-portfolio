@@ -980,8 +980,17 @@ footer{
     .left-container img, .right-container img {
         left: 10px;
     }
+    .education-info {
+        padding: 30px 30px;
+    }
     .education-info .swin {
         width: 100%;
+    }
+    .education-info h2 {
+        font-size: 22px;
+    }
+    .education-info h3 {
+        font-size: 18px;
     }
     footer {
         padding-block: 15px 20px; /* Minimized padding */
