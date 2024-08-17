@@ -994,12 +994,18 @@ footer{
     }
     .text-box {
         font-size: 13px;
+        padding: 20px 30px;
+    }
+    .text-box h3 {
+        font-size: 18px;
     }
     .right-container {
         left: 0;
     }
     .left-container img, .right-container img {
-        left: -15px;
+        left: -12px;
+        width: calc(var(--experience-logo) - 8px);
+
     }
     .education-info {
         padding: 30px 30px;
