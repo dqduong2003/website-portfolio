@@ -920,6 +920,27 @@ footer{
     .education-info .swin {
         width: 100%;
     }
+    .experience-info{
+        margin: 50px auto;
+    }
+    .experience-info::after {
+        left: 31px;
+    }
+    .experience-container {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+    .text-box {
+        font-size: 13px;
+    }
+    .right-container {
+        left: 0;
+    }
+    .left-container img, .right-container img {
+        left: -15px;
+    }
+
     footer {
         padding-block: 20px 30px; /* Further reduce padding */
     }
@@ -978,7 +999,7 @@ footer{
         left: 0;
     }
     .left-container img, .right-container img {
-        left: 10px;
+        left: -15px;
     }
     .education-info {
         padding: 30px 30px;
