@@ -623,8 +623,8 @@ body.vid-mode .ptoggle-btn:not(.vid-active):hover {
   /* Hero */
   .hero-sec { flex-direction: column-reverse; padding: 80px 20px 48px; gap: 32px; min-height: auto; }
   .hero-text h1 { font-size: 40px !important; }
-  .hero-photo { width: 100%; }
-  .hero-photo img { width: 100% !important; height: 300px !important; }
+  .hero-photo { width: 100%; max-width: 400px; margin: 0 auto; }
+  .hero-photo img { width: 100% !important; height: auto !important; aspect-ratio: 400 / 520; }
   #code-card { display: none; }
   .anim-desc { font-size: 16px !important; max-width: 100% !important; }
 
