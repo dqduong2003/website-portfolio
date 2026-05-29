@@ -341,9 +341,82 @@ function initMagneticBtn() {
 }
 
 /* ══════════════════════════════════════════
+   CLAUDE-STYLE LOADER
+   ══════════════════════════════════════════ */
+function initLoader() {
+  const bar = document.querySelector('.loader-bar');
+  const loader = document.getElementById('loader');
+  const logos = document.querySelectorAll('.loader-logo');
+  if (!bar || !loader || logos.length === 0) return;
+
+  const tl = gsap.timeline({
+    onComplete: () => {
+      gsap.to(loader, {
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power3.inOut',
+        onComplete: () => {
+          loader.style.display = 'none';
+          document.body.classList.add('loaded');
+          // Re-trigger intersection observer triggers
+          observeAll();
+        }
+      });
+    }
+  });
+
+  // Set initial states for all logos
+  gsap.set(logos, { opacity: 0, scale: 0.7, rotation: -12 });
+  // Make the first one active initially
+  gsap.set(logos[0], { opacity: 1, scale: 1, rotation: 0 });
+
+  // Fill progress bar smoothly over 1.8 seconds to allow visual cycling
+  tl.to(bar, {
+    width: '100%',
+    duration: 1.8,
+    ease: 'power2.inOut'
+  }, 0);
+
+  // Cycle through the 4 logos sequentially
+  const interval = 0.45;
+  for (let i = 0; i < logos.length - 1; i++) {
+    const current = logos[i];
+    const next = logos[i + 1];
+    const time = (i + 1) * interval;
+
+    // Transition out the current logo
+    tl.to(current, {
+      opacity: 0,
+      scale: 0.7,
+      rotation: 12,
+      duration: 0.3,
+      ease: 'power2.in'
+    }, time);
+
+    // Transition in the next logo
+    tl.to(next, {
+      opacity: 1,
+      scale: 1,
+      rotation: 0,
+      duration: 0.35,
+      ease: 'power2.out'
+    }, time + 0.1);
+  }
+
+  // Fade out the final logo as loading finishes
+  tl.to(logos[logos.length - 1], {
+    scale: 0.9,
+    opacity: 0,
+    duration: 0.3,
+    ease: 'power2.in'
+  }, 1.7);
+}
+
+/* ══════════════════════════════════════════
    INIT
    ══════════════════════════════════════════ */
 handleRouting(true);
+initLoader();
 renderProjects();
 observeAll();
 

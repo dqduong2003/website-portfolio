@@ -59,6 +59,90 @@
 }
 
 /* ══════════════════════════════════════════
+   PREMIUM LOADER (Claude-style)
+   ══════════════════════════════════════════ */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--c-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  gap: 28px;
+}
+
+body:not(.loaded) {
+  overflow: hidden;
+  height: 100vh;
+}
+
+#loader-logo-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-logo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  stroke: var(--c-accent);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: stroke 0.3s ease;
+  pointer-events: none;
+}
+
+.loader-logo.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.loader-track {
+  width: 140px;
+  height: 2px;
+  background: var(--c-border);
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--c-accent);
+  border-radius: 99px;
+  transition: background 0.3s ease;
+}
+
+/* Videographer mode support for loader if triggered directly */
+body.vid-mode #loader {
+  background: var(--c-vid-bg);
+}
+body.vid-mode .loader-bar {
+  background: var(--c-vid-amber);
+}
+body.vid-mode .loader-logo {
+  stroke: var(--c-vid-amber);
+}
+
+/* Initial hidden states before loading finishes */
+body:not(.loaded) .line-inner { transform: translateY(108%); }
+body:not(.loaded) .anim-label,
+body:not(.loaded) .anim-desc,
+body:not(.loaded) .anim-chips,
+body:not(.loaded) .anim-btns,
+body:not(.loaded) .anim-photo,
+body:not(.loaded) .anim-code {
+  opacity: 0;
+}
+
+/* ══════════════════════════════════════════
    BASE RESET
    ══════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; }
@@ -540,20 +624,20 @@ body.vid-mode .ptoggle-btn:not(.vid-active):hover {
 /* Hero headline reveal */
 .line-wrap { overflow: hidden; display: block; }
 @keyframes lineSlideUp { from { transform: translateY(108%); } to { transform: translateY(0); } }
-.line-inner { display: block; animation: lineSlideUp 0.85s cubic-bezier(0.16,1,0.3,1) both; }
-.line-inner.d1 { animation-delay: .08s; }
-.line-inner.d2 { animation-delay: .22s; }
+body.loaded .line-inner { display: block; animation: lineSlideUp 0.85s cubic-bezier(0.16,1,0.3,1) both; }
+body.loaded .line-inner.d1 { animation-delay: .08s; }
+body.loaded .line-inner.d2 { animation-delay: .22s; }
 
 /* Hero entrance animations */
 @keyframes fadeSlideUp   { from { opacity:0; transform:translateY(20px); }  to { opacity:1; transform:translateY(0); }  }
 @keyframes fadeSlideRight{ from { opacity:0; transform:translateX(28px); } to { opacity:1; transform:translateX(0); } }
 @keyframes scaleIn       { from { opacity:0; transform:scale(0.88); }       to { opacity:1; transform:scale(1); }       }
-.anim-label { animation: fadeSlideUp    0.6s cubic-bezier(0.16,1,0.3,1) 0.08s both; }
-.anim-desc  { animation: fadeSlideUp    0.6s cubic-bezier(0.16,1,0.3,1) 0.36s both; }
-.anim-chips { animation: fadeSlideUp    0.6s cubic-bezier(0.16,1,0.3,1) 0.48s both; }
-.anim-btns  { animation: fadeSlideUp    0.6s cubic-bezier(0.16,1,0.3,1) 0.58s both; }
-.anim-photo { animation: fadeSlideRight 1.0s cubic-bezier(0.16,1,0.3,1) 0.14s both; }
-.anim-code  { animation: scaleIn        0.7s cubic-bezier(0.34,1.56,0.64,1) 0.5s both; }
+body.loaded .anim-label { animation: fadeSlideUp    0.6s cubic-bezier(0.16,1,0.3,1) 0.08s both; }
+body.loaded .anim-desc  { animation: fadeSlideUp    0.6s cubic-bezier(0.16,1,0.3,1) 0.36s both; }
+body.loaded .anim-chips { animation: fadeSlideUp    0.6s cubic-bezier(0.16,1,0.3,1) 0.48s both; }
+body.loaded .anim-btns  { animation: fadeSlideUp    0.6s cubic-bezier(0.16,1,0.3,1) 0.58s both; }
+body.loaded .anim-photo { animation: fadeSlideRight 1.0s cubic-bezier(0.16,1,0.3,1) 0.14s both; }
+body.loaded .anim-code  { animation: scaleIn        0.7s cubic-bezier(0.34,1.56,0.64,1) 0.5s both; }
 
 /* IntersectionObserver reveal – fade up */
 .io { opacity: 0; transform: translateY(30px); }
