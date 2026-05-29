@@ -2,7 +2,7 @@ export const PROJECTS = [
   {
     id: 1,
     title: 'Machine Reading Comprehension (MRC)',
-    img: 'public/assets/projects/code/mrc.png',
+    img: '/assets/projects/code/mrc.png',
     chips: ['Python', 'LLM', 'BERT', 'COVIDQA', 'SQuAD', 'PEFT', 'TensorFlow', 'AI'],
     desc: 'Fine-tuned a BERT model on biomedical datasets (COVIDQA, cpgQA) to produce an MRC system capable of reading biomedical articles and answering natural language queries. Leveraged PEFT techniques to efficiently adapt the model with minimal compute.',
     demo: false,
@@ -14,7 +14,7 @@ export const PROJECTS = [
   {
     id: 2,
     title: 'Automated ML Issue Resolution via ChatGPT',
-    img: 'public/assets/projects/code/intern.png',
+    img: '/assets/projects/code/intern.png',
     chips: ['Python', 'OpenAI', 'GPT-4 API', 'BeautifulSoup4', 'Matplotlib', 'Automation', 'Research'],
     desc: "Generated automated test cases using Python and the GPT-4 API to evaluate ChatGPT's potential in resolving machine learning issues. Research was conducted at the A²I² institute and contributed to a published PhD paper.",
     demo: false,
@@ -26,7 +26,7 @@ export const PROJECTS = [
   {
     id: 3,
     title: 'Maze Search Algorithms Visualisation',
-    img: 'public/assets/projects/code/maze.png',
+    img: '/assets/projects/code/maze.png',
     chips: ['Python', 'Tkinter', 'Search Algorithms', 'Path Planning', 'Optimization'],
     desc: "Interactive visualisation of tree-based search algorithms including DFS, BFS, A*, and Dijkstra's on procedurally generated maze grids. Evaluates and compares algorithm performance, path length, and computational cost in real-time.",
     demo: false,
@@ -38,7 +38,7 @@ export const PROJECTS = [
   {
     id: 4,
     title: 'Plant Disease Prediction Platform',
-    img: 'public/assets/projects/code/sepa.png',
+    img: '/assets/projects/code/sepa.png',
     chips: ['Machine Learning', 'TensorFlow', 'VGG16', 'Python', 'Flask', 'React.js', 'Web App'],
     desc: 'A full-stack web application using a fine-tuned VGG16 model to detect and classify plant diseases from uploaded images. Designed to help gardeners and farmers identify disease early through a React.js frontend and Flask REST API backend.',
     demo: false,
@@ -50,7 +50,7 @@ export const PROJECTS = [
   {
     id: 5,
     title: 'World Energy Consumption Visualisation',
-    img: 'public/assets/projects/code/energy.png',
+    img: '/assets/projects/code/energy.png',
     chips: ['JavaScript', 'D3.js', 'Data Visualization'],
     desc: 'A D3.js-powered interactive dashboard allowing users to compare global energy consumption and production from 1980 to 2012. Features interactive filters for energy type, animated trend lines, and country-level comparisons.',
     demo: true,
@@ -62,7 +62,7 @@ export const PROJECTS = [
   {
     id: 6,
     title: 'PvP Chess Engine',
-    img: 'public/assets/projects/code/GUIgame.jpg',
+    img: '/assets/projects/code/GUIgame.jpg',
     chips: ['C#', 'SplashKit', 'OOP', 'Game Development', 'Unit Tests', 'Design Patterns'],
     desc: 'A full-featured Chess Engine written in C# using OOP principles and design patterns. Supports player-versus-player gameplay, complete move management (castling, en passant, promotion), and the ability to switch between console and GUI views using SplashKit.',
     demo: false,
