@@ -225,7 +225,7 @@ body.vid-mode #cur-ring {
    ══════════════════════════════════════════ */
 #nav {
   position: fixed; top: 2px; left: 0; right: 0; z-index: 200;
-  height: 62px; display: flex; align-items: center; justify-content: space-between;
+  height: 62px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
   padding: 0 52px;
   background: rgba(250,249,245,0.78);
   backdrop-filter: blur(14px) saturate(1.4);
@@ -239,10 +239,14 @@ body.vid-mode #cur-ring {
 .nav-logo {
   font-family: var(--f-serif); font-size: 21px;
   color: var(--c-text); letter-spacing: -.3px; cursor: none;
+  grid-column: 1; justify-self: start;
 }
 .nav-logo em { font-style: normal; color: var(--c-accent); }
 
-.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-links {
+  display: flex; align-items: center; gap: 2px;
+  grid-column: 3; justify-self: end;
+}
 
 .nav-link {
   padding: 6px 13px; border-radius: var(--r-sm);
@@ -252,12 +256,19 @@ body.vid-mode #cur-ring {
 }
 .nav-link:hover { background: rgba(0,0,0,0.04); color: var(--c-text); }
 
+/* Hide nav links and hamburger button in Director mode */
+body.vid-mode .nav-links,
+body.vid-mode #ham {
+  display: none !important;
+}
+
 /* Persona toggle */
 .ptoggle {
   display: flex; gap: 3px;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
-  border-radius: var(--r-md); padding: 3px; margin-left: 20px;
+  border-radius: var(--r-md); padding: 3px;
+  grid-column: 2; justify-self: center;
 }
 .ptoggle-btn {
   display: flex; align-items: center; gap: 6px;
@@ -286,6 +297,7 @@ body.vid-mode .ptoggle-btn:not(.vid-active):hover {
 #ham {
   display: none; flex-direction: column; gap: 5px;
   cursor: none; background: none; border: none; padding: 8px;
+  grid-column: 3; justify-self: end;
 }
 #ham span {
   display: block; width: 22px; height: 2px;
@@ -699,6 +711,7 @@ body.loaded .anim-code  { animation: scaleIn        0.7s cubic-bezier(0.34,1.56,
 
   /* Nav */
   #nav { padding: 0 20px; }
+  .nav-links { display: none !important; }
   .nav-link { display: none; }
   #ham { display: flex; }
   .ptoggle { margin-left: 0; }
