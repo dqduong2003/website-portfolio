@@ -1,100 +1,6 @@
 import { gsap } from 'gsap';
 import './style.css';
-import { PROJECTS } from './data/projects.js';
-
-/* ══════════════════════════════════════════
-   PROJECT GRID – render cards
-   ══════════════════════════════════════════ */
-function renderProjects() {
-  const grid = document.getElementById('proj-grid');
-  if (!grid) return;
-
-  grid.innerHTML = PROJECTS.map((p, i) => {
-    const delay = `d${i + 1}`;
-    const previewChips = p.previewChips.map(c => `<span class="chip">${c}</span>`).join('');
-    const demoLink = p.demo
-      ? `<span class="proj-link-demo"><i class="ti ti-external-link"></i> Live Demo</span>`
-      : ``;
-
-    return `
-      <div class="proj-card io ${delay}" data-id="${p.id}">
-        <div class="card-img-wrap">
-          <img src="${p.img}" alt="${p.title}" decoding="async" loading="lazy"
-               style="width:100%;height:165px;object-fit:cover;will-change:transform;display:block;">
-        </div>
-        <div class="proj-card-body" style="padding:20px;">
-          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:11px;">${previewChips}</div>
-          <h3 style="font-size:17px;font-weight:600;color:var(--c-text);margin:0 0 6px;">${p.title}</h3>
-          <p style="font-size:13px;color:var(--c-text-subtle);line-height:1.62;margin:0 0 16px;">${p.preview}</p>
-          <div class="proj-links">
-            <span class="proj-link-src"><i class="ti ti-brand-github"></i> Source</span>
-            ${demoLink}
-          </div>
-        </div>
-      </div>`;
-  }).join('');
-
-  // Attach click handlers
-  grid.querySelectorAll('.proj-card').forEach(card => {
-    card.addEventListener('click', () => openModal(Number(card.dataset.id)));
-  });
-}
-
-/* ══════════════════════════════════════════
-   MODAL
-   ══════════════════════════════════════════ */
-function openModal(id) {
-  const p = PROJECTS.find(x => x.id === id);
-  if (!p) return;
-
-  document.getElementById('modal-img').src = p.img;
-  document.getElementById('modal-title').textContent = p.title;
-  document.getElementById('modal-desc').textContent = p.desc;
-  document.getElementById('modal-chips').innerHTML = p.chips
-    .map(c => `<span class="chip">${c}</span>`).join('');
-
-  // Update Source Code Button link and visibility
-  const src = document.getElementById('modal-src');
-  if (p.srcLink) {
-    src.href = p.srcLink;
-    src.target = '_blank';
-    src.style.opacity = '1';
-    src.style.pointerEvents = 'auto';
-  } else {
-    src.href = '#';
-    src.removeAttribute('target');
-    src.style.opacity = '0.35';
-    src.style.pointerEvents = 'none';
-  }
-
-  // Update Live Demo Button link and visibility
-  const live = document.getElementById('modal-live');
-  if (p.demo && p.demoLink) {
-    live.href = p.demoLink;
-    live.target = '_blank';
-    live.style.opacity = '1';
-    live.style.pointerEvents = 'auto';
-  } else {
-    live.href = '#';
-    live.removeAttribute('target');
-    live.style.opacity = '0.35';
-    live.style.pointerEvents = 'none';
-  }
-
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('modal').addEventListener('click', e => {
-  if (e.target === document.getElementById('modal')) closeModal();
-});
-document.getElementById('modal-close').addEventListener('click', closeModal);
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+import './projects-island.jsx';
 
 /* ══════════════════════════════════════════
    NAVIGATION
@@ -417,7 +323,6 @@ function initLoader() {
    ══════════════════════════════════════════ */
 handleRouting(true);
 initLoader();
-renderProjects();
 observeAll();
 
 window.addEventListener('load', () => {

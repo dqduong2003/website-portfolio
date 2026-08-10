@@ -335,8 +335,8 @@
           <h2 class="io d1" style="font-family:var(--f-serif);font-size:42px;font-weight:400;color:var(--c-text);line-height:1.15;margin:0;">Projects I've shipped.</h2>
           <p class="io d2" style="font-size:14px;color:var(--c-text-faint);max-width:220px;text-align:right;line-height:1.6;flex-shrink:0;margin:0;">Click any card for full details.</p>
         </div>
-        <!-- Cards injected by main.js -->
-        <div id="proj-grid" class="proj-grid"></div>
+        <!-- React island: expandable-profile-card project grid, mounted by src/projects-island.jsx -->
+        <div id="proj-grid-root" class="shadcn-scope"></div>
       </div>
     </section>
 
@@ -518,28 +518,6 @@
 
   </div><!-- /vid-persona -->
 
-
-  <!-- ════════════════════════════════════════
-       PROJECT MODAL
-       ════════════════════════════════════════ -->
-  <div id="modal">
-    <div class="modal-box">
-      <div style="position:relative;">
-        <img id="modal-img" src="" alt="" decoding="async" loading="lazy"
-             style="width:100%;height:260px;object-fit:cover;border-radius:var(--r-2xl) var(--r-2xl) 0 0;display:block;">
-        <button id="modal-close" class="modal-close"><i class="ti ti-x"></i></button>
-      </div>
-      <div class="modal-body">
-        <div id="modal-chips" class="modal-chips"></div>
-        <h3 id="modal-title" class="modal-title"></h3>
-        <p id="modal-desc" class="modal-desc"></p>
-        <div class="modal-actions">
-          <a id="modal-src" href="#" class="modal-btn-src"><i class="ti ti-brand-github"></i> Source Code</a>
-          <a id="modal-live" href="#" class="modal-btn-live"><i class="ti ti-external-link"></i> Live Demo</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
