@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import './style.css';
 import './projects-island.jsx';
+import './reel-island.jsx';
 
 /* ══════════════════════════════════════════
    NAVIGATION

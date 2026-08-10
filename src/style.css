@@ -581,6 +581,18 @@ body.vid-mode .ptoggle-btn:not(.vid-active):hover {
 
 .vid-reel-sec { padding: var(--section-pad); background: var(--c-vid-bg-warm); position: relative; }
 .vid-reel-inner { max-width: 1120px; margin: 0 auto; }
+
+/* Breaks the carousel out of .vid-reel-inner's 1120px column so more of the
+   side cards peek into view, while the rest of the section's content
+   (heading, platform links) stays on the narrower column. */
+#vid-reel-carousel-root {
+  width: min(92vw, 1500px);
+  margin-left: calc(50% - min(46vw, 750px));
+  margin-right: calc(50% - min(46vw, 750px));
+}
+@media (max-width: 640px) {
+  #vid-reel-carousel-root { width: 100%; margin-left: 0; margin-right: 0; }
+}
 .vid-thumb-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 72px; }
 .plat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
 .vid-footer { background: var(--c-vid-footer); padding: 40px 64px; display: flex; justify-content: space-between; align-items: center; }

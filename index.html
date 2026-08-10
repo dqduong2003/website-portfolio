@@ -425,51 +425,8 @@
         </div>
         <h2 class="io d1" style="font-family:var(--f-play);font-size:48px;font-weight:400;color:var(--c-vid-bg);margin-bottom:48px;font-style:italic;line-height:1.12;">The Reel.</h2>
 
-        <!-- Featured film strip -->
-        <a href="https://youtu.be/Uvd7xdQ__4c?si=SPzYtzpi_--XdhCO" target="_blank" class="film-strip featured-film io d2" style="margin-bottom:52px;border-radius:14px;overflow:hidden;display:block;">
-          <img src="/assets/projects/video/video1.png"
-               alt="Featured cinematic work" decoding="async" loading="lazy"
-               style="width:100%;height:480px;object-fit:cover;display:block;filter:sepia(0.12) contrast(1.04);">
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:40px 40px 36px;background:linear-gradient(transparent,rgba(12,6,2,0.88));z-index:4;">
-            <div style="font-family:var(--f-garamond);font-size:12px;color:rgba(212,164,90,0.82);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Featured Project</div>
-            <div style="font-family:var(--f-play);font-size:28px;color:var(--c-vid-cream);font-weight:400;font-style:italic;">VMHC'26: RECAP VIDEO</div>
-            <div style="font-family:var(--f-garamond);font-size:16px;color:rgba(245,230,200,0.6);margin-top:6px;">Cinematic Sport · 4K · Color graded in DaVinci Resolve</div>
-          </div>
-        </a>
-
-        <!-- Video thumbnails -->
-        <div class="vid-thumb-grid">
-          <a href="https://youtube.com/playlist?list=PLHmbWgUENmZfo61E-5H1w_bX7QAVCRxb2&si=MmL4DqRpcsFdmY5d" target="_blank" class="vid-thumb io-left d1">
-            <img src="/assets/projects/video/music_night.png" alt="MUSIC NIGHT: CHAPTER OF US" decoding="async" loading="lazy" style="filter:sepia(0.2) contrast(1.06);">
-            <div class="vid-overlay">
-              <div>
-                <div style="font-family:var(--f-play);font-size:16px;color:var(--c-vid-cream);font-style:italic;"> MUSIC NIGHT: CHAPTER OF US</div>
-                <div style="font-family:var(--f-garamond);font-size:12px;color:rgba(212,164,90,0.8);">Music Video · 2026</div>
-              </div>
-            </div>
-            <div class="vid-reveal"></div>
-          </a>
-          <a href="https://www.behance.net/gallery/246131665/VISS-MERCH-LOOKBOOK" target="_blank" class="vid-thumb io-left d2">
-            <img src="/assets/projects/video/lookbook.jpg" alt="VISS Merch Lookbook" decoding="async" loading="lazy" style="filter:sepia(0.22) brightness(0.95);">
-            <div class="vid-overlay">
-              <div>
-                <div style="font-family:var(--f-play);font-size:16px;color:var(--c-vid-cream);font-style:italic;">VISS Merch Lookbook</div>
-                <div style="font-family:var(--f-garamond);font-size:12px;color:rgba(212,164,90,0.8);">Photoshoot Album  · 2026</div>
-              </div>
-            </div>
-            <div class="vid-reveal"></div>
-          </a>
-          <a href="https://youtu.be/L_hPWuWXi-8?si=3ZYNrTlPljGZclhX" target="_blank" class="vid-thumb io-left d3">
-            <img src="/assets/projects/video/shuttered_memories.png" alt="SHUTTERED MEMORIES" decoding="async" loading="lazy" style="filter:sepia(0.18) contrast(1.04);">
-            <div class="vid-overlay">
-              <div>
-                <div style="font-family:var(--f-play);font-size:16px;color:var(--c-vid-cream);font-style:italic;">SHUTTERED MEMORIES</div>
-                <div style="font-family:var(--f-garamond);font-size:12px;color:rgba(212,164,90,0.8);">Short Film · 2023</div>
-              </div>
-            </div>
-            <div class="vid-reveal"></div>
-          </a>
-        </div>
+        <!-- Video thumbnails: VelocityCarousel React island, mounted by src/reel-island.jsx -->
+        <div id="vid-reel-carousel-root" class="io-left d1" style="margin-bottom:72px;"></div>
 
         <!-- Platform links -->
         <div class="slabel slabel-vid io" style="margin-bottom:24px;">
